@@ -19,6 +19,7 @@
 #include "behavior_data.h"
 #include "seq_ids.h"
 #include "sm64.h"
+#include "game/ingame_menu.h"
 
 #define PRESS_START_DEMO_TIMER 800
 
@@ -140,51 +141,19 @@ s16 level_select_input_loop(void) {
     return 0;
 }
 
-float selectorYTarget = -370;
-float selectorYPos = 0;
+float g_selectorYTarget = -370;
+float g_selectorYPos = 0;
 
-u16 selection;
-u16 selectionMax;
+u8 g_selection;
+u8 g_selectionMax;
 u16 menuLayer;
 
-u16 joystickDelay;
-u16 joystickDisable;
-u8 saveNum;
+u16 g_joystickDelay;
+u16 g_joystickDisable;
+u8 g_saveNum;
 
 void handle_inputs(u8 type) {
-    if (type == 0) {
-        if ((gPlayer1Controller->rawStickY < -60 && selection < selectionMax) && joystickDelay == 0) {
-            joystickDelay = 1;
-            selection++;
-            play_sound(SOUND_MENU_CHANGE_SELECT, gGlobalSoundSource);  
-        }
-
-        if ((gPlayer1Controller->rawStickY > 60 && selection > 0) && joystickDelay == 0) {
-            joystickDelay = 1;
-            selection--;
-            play_sound(SOUND_MENU_CHANGE_SELECT, gGlobalSoundSource);
-        }
-
-        if ((gPlayer1Controller->rawStickY == 0 && joystickDelay == 1) && joystickDisable == 0) {
-            joystickDelay = 0;
-        }
-    } else if (type == 1) {
-        if ((gPlayer1Controller->rawStickX < -60 && selection < selectionMax) && joystickDelay == 0) {
-            joystickDelay = 1;
-            selection++;
-            play_sound(SOUND_MENU_CHANGE_SELECT, gGlobalSoundSource);  
-        }
-
-        if ((gPlayer1Controller->rawStickX > 60 && selection > 0) && joystickDelay == 0) {
-            joystickDelay = 1;
-            selection--;
-            play_sound(SOUND_MENU_CHANGE_SELECT, gGlobalSoundSource);
-        }
-
-        if ((gPlayer1Controller->rawStickX == 0 && joystickDelay == 1) && joystickDisable == 0) {
-            joystickDelay = 0;
-        }
-    }
+    handle_menu_scrolling (type == 0 ? MENU_SCROLL_VERTICAL : MENU_SCROLL_HORIZONTAL, &g_selection, 0, g_selectionMax);
 }
 
 void print_save_strings(void) {
@@ -200,12 +169,12 @@ void bhv_selector_loop(void) {
     } else {
         gCurrentObject->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
     }
-    selectorYPos = selectorYPos + (selectorYTarget - selectorYPos) * 0.2f;
-    gCurrentObject->oPosY = selectorYPos;
+    g_selectorYPos = g_selectorYPos + (g_selectorYTarget - g_selectorYPos) * 0.2f;
+    gCurrentObject->oPosY = g_selectorYPos;
 }
 
 void bhv_character_viewer_loop(void) {
-    if (selection == 0) {
+    if (g_selection == 0) {
         gCurrentObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_INTRO_CHARACTER_MARIO];
     } else {
         gCurrentObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_INTRO_CHARACTER_LUIGI];
@@ -227,27 +196,27 @@ s32 intro_default(void) {
     handle_inputs(0);
 
     if (menuLayer != 0) {
-        switch (selection) {
+        switch (g_selection) {
             case 0:
-                selectorYTarget = -370;
+                g_selectorYTarget = -370;
                 break;
             case 1:
-                selectorYTarget = -495;
+                g_selectorYTarget = -495;
                 break;
             case 2:
-                selectorYTarget = -620;
+                g_selectorYTarget = -620;
                 break;
             case 3:
-                selectorYTarget = -740;
+                g_selectorYTarget = -740;
                 break;
             case 4:
-                selectorYTarget = -860;
+                g_selectorYTarget = -860;
         }
     }
 
     switch (menuLayer) {
         case 0:
-            selectionMax = 0;
+            g_selectionMax = 0;
             if ((gGlobalTimer & 0x1F) < 20) {
                 if (gControllerBits == 0) {
                     print_text_centered(SCREEN_WIDTH / 2, 75, "NO CONTROLLER");
@@ -257,7 +226,7 @@ s32 intro_default(void) {
             }
             break;
         case 1:
-            selectionMax = 4;
+            g_selectionMax = 4;
             print_text(100, 90, "FILE A");
             print_text(100, 72, "FILE B");
             print_text(100, 54, "FILE C");
@@ -266,7 +235,7 @@ s32 intro_default(void) {
             print_save_strings();
             break;
         case 2:
-            selectionMax = 4;
+            g_selectionMax = 4;
             print_text(100, 90, "FILE A");
             print_text(100, 72, "FILE B");
             print_text(100, 54, "FILE C");
@@ -283,39 +252,39 @@ s32 intro_default(void) {
                 menuLayer++;
                 break;
             case 1:
-                if (selection < 4) {
-                    saveNum = selection + 1;
-                    selection = 0;
+                if (g_selection < 4) {
+                    g_saveNum = g_selection + 1;
+                    g_selection = 0;
                 } else {
                     menuLayer = 2;
-                    selection = 0;
+                    g_selection = 0;
                 }
                 play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
                 break;
             case 2:
-                if (selection < 4) {
-                    save_file_erase(selection);
+                if (g_selection < 4) {
+                    save_file_erase(g_selection);
                     play_sound(SOUND_MARIO_DOH, gGlobalSoundSource);
                 } else {
                     menuLayer = 1;
-                    selection = 0;
+                    g_selection = 0;
                     play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
                 }
         }
     }
-    return saveNum;
+    return g_saveNum;
 }
 
 s32 intro_character_select(void) {
-    u8 characterSelection = 0;
+    u8 characterg_selection = 0;
 
     handle_inputs(1);
-    print_text_fmt_int(20, 20, "%0d", selection);
+    print_text_fmt_int(20, 20, "%0d", g_selection);
 
-    selectionMax = 1;
+    g_selectionMax = 1;
     print_text_centered(SCREEN_WIDTH/2, 200, "SELECT A PLUMBER!");
 
-    return characterSelection;
+    return characterg_selection;
 }
 
 s32 intro_game_over(void) {
