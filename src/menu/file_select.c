@@ -1754,26 +1754,24 @@ s32 update_text_fade_out(void) {
  * If a save doesn't exist, print "NEW" instead.
  */
 void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
-    u8 starCountText[4];
     s8 offset = 0;
     s16 starCount;
 
     if (save_file_exists(fileIndex) == TRUE) {
         starCount = save_file_get_total_star_count(fileIndex, COURSE_MIN - 1, COURSE_MAX - 1);
         // Print star icon
-        print_hud_lut_string(HUD_LUT_GLOBAL, x, y, starIcon);
+        print_text(x, y, "-");
         // If star count is less than 100, print x icon and move
         // the star count text one digit to the right.
         if (starCount < 100) {
-            print_hud_lut_string(HUD_LUT_GLOBAL, x + 16, y, xIcon);
+            print_text(x + 16, y, "*");
             offset = 16;
         }
         // Print star count
-        int_to_str(starCount, starCountText);
-        print_hud_lut_string(HUD_LUT_GLOBAL, x + offset + 16, y, starCountText);
+        print_text_fmt_int(x + offset + 16, y, "%02d", starCount);
     } else {
         // Print "new" text
-        print_hud_lut_string(HUD_LUT_GLOBAL, x, y, LANGUAGE_ARRAY(textNew));
+        print_text(x, y, "NEW");
     }
 }
 

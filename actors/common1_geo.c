@@ -28,3 +28,5 @@
 #include "luigi/geo.inc.c"
 
 #include "examplelogo/geo.inc.c"
+#include "title_player_platform/geo.inc.c"
+#include "title_mario/geo.inc.c"

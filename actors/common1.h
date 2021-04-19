@@ -251,7 +251,13 @@ extern const Gfx wooden_signpost_seg3_dl_0302DD08[];
 extern const Collision wooden_signpost_seg3_collision_0302DD80[];
 
 #include "luigi/geo_header.h"
+#include "luigi/anim_header.h"
 
 #include "examplelogo/geo_header.h"
+
+#include "title_player_platform/geo_header.h"
+#include "title_player_platform/collision_header.h"
+
+#include "title_mario/geo_header.h"
 
 #endif

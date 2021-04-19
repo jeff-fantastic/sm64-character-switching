@@ -14,6 +14,7 @@
  * linker script syntax.
 */
 
+#define USE_EXT_RAM
 #ifndef USE_EXT_RAM
 #define RAM_END          0x80400000
 #else
@@ -26,7 +27,7 @@
  */
 
 #define SEG_POOL_START   _framebuffersSegmentNoloadEnd // 0x0165000 in size
-#define SEG_GODDARD      SEG_POOL_START + 0x113000
+#define SEG_GODDARD      SEG_POOL_START + 0x313000
 
 #define POOL_SIZE        RAM_END - SEG_POOL_START
 

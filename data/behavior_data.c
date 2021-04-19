@@ -52,6 +52,7 @@
 #include "levels/wf/header.h"
 #include "levels/bowser_2/header.h"
 #include "levels/ttm/header.h"
+#include "src/menu/level_select_menu.h"
 
 #include "make_const_nonconst.h"
 #include "behavior_data.h"
@@ -6106,4 +6107,26 @@ const BehaviorScript bhvIntroScene[] = {
     END_LOOP(),
 };
 
+// Custom behavior(s) below
 
+const BehaviorScript bhvTitleSelector[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    BEGIN_LOOP(),
+        SET_INT(oAngleVelYaw,  0x600),
+        ADD_INT(oMoveAngleYaw, 0x600),
+        CALL_NATIVE(bhv_selector_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvTitleCharacterView[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_ANIMATIONS(oAnimations, luigi_anims),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+        SET_INT(oAngleVelYaw,  0x300),
+        ADD_INT(oMoveAngleYaw, 0x300),
+        CALL_NATIVE(bhv_character_viewer_loop),
+    END_LOOP(),
+};

@@ -10,6 +10,7 @@
 #include "game/paintings.h"
 #include "menu/debug_level_select.h"
 #include "menu/intro_geo.h"
+#include "menu/level_select_menu.h"
 
 #include "make_const_nonconst.h"
 
@@ -62,15 +63,12 @@ const GeoLayout intro_geo_mario_head_regular[] = {
       GEO_OPEN_NODE(),
          GEO_CAMERA_FRUSTUM(45, 128, 16384),
          GEO_OPEN_NODE(),
-            GEO_ASM(2, geo_draw_mario_head_goddard),
+            GEO_CAMERA(0, 0, -300, 7000, 0, 0, 0, 0x00000000),
+            GEO_OPEN_NODE(),
+               GEO_RENDER_OBJ(),
+            GEO_CLOSE_NODE(),
          GEO_CLOSE_NODE(),
       GEO_CLOSE_NODE(),
-#ifdef VERSION_SH
-   GEO_ZBUFFER(0),
-   GEO_OPEN_NODE(),
-      GEO_ASM(0, geo_intro_rumble_pak_graphic),
-   GEO_CLOSE_NODE(),
-#endif
    GEO_CLOSE_NODE(),
    GEO_END(),
 };
@@ -93,7 +91,10 @@ const GeoLayout intro_geo_mario_head_dizzy[] = {
       GEO_OPEN_NODE(),
          GEO_CAMERA_FRUSTUM(45, 128, 16384),
          GEO_OPEN_NODE(),
-            GEO_ASM(3, geo_draw_mario_head_goddard),
+            GEO_CAMERA(0, 0, 0, 1200, 0, 0, 0, 0x00000000),
+            GEO_OPEN_NODE(),
+               GEO_RENDER_OBJ(),
+            GEO_CLOSE_NODE(),
          GEO_CLOSE_NODE(),
       GEO_CLOSE_NODE(),
 #ifdef VERSION_SH

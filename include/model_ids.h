@@ -330,6 +330,12 @@
 #define MODEL_TTM_STAR_SMILEY                     0x39        // ttm_geo_000D84
 #define MODEL_TTM_MOON_SMILEY                     0x3A        // ttm_geo_000DBC
 
+// intro
+#define MODEL_INTRO_EXAMPLE_TITLE                 0x35        // examplelogo_geo
+#define MODEL_INTRO_CHARACTER_PEDESTAL            0x36        // title_player_platform_geo
+#define MODEL_INTRO_CHARACTER_MARIO               0x37        // mario_geo
+#define MODEL_INTRO_CHARACTER_LUIGI               0x38        // luigi_geo
+
 // actor model IDs
 
 // first set of actor bins (0x54-0x63)
