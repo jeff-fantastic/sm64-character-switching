@@ -32,10 +32,11 @@ const LevelScript level_main_menu_entry_1[] = {
     ALLOC_LEVEL_POOL(),
     LOAD_MODEL_FROM_GEO(MODEL_INTRO_CHARACTER_PEDESTAL, title_player_platform_geo),
     LOAD_MODEL_FROM_GEO(MODEL_INTRO_CHARACTER_MARIO, title_mario_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_INTRO_CHARACTER_LUIGI, title_mario_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_INTRO_CHARACTER_LUIGI, RCP_TitleLuigi),
 
     AREA(/*index*/ 1, geo_menu_file_select_strings_and_menu_cursor),
-        OBJECT(/*model*/ MODEL_NONE, /*pos*/ 0, 0, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvTitleCharacterView),
+        OBJECT(/*model*/ MODEL_INTRO_CHARACTER_MARIO, /*pos*/ 0, -75, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvTitleCharacterView),
+        OBJECT(/*model*/ MODEL_INTRO_CHARACTER_PEDESTAL, /*pos*/ 0, -900, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvTitleCharacterPedestal),
         TERRAIN(/*terrainData*/ main_menu_seg7_collision),
     END_AREA(),
 

@@ -35,6 +35,8 @@
 
 u32 unused80339F10;
 s8 filler80339F1C[20];
+// character variable
+u8 currentCharacter;
 
 /**************************************************
  *                    ANIMATIONS                  *
@@ -1864,6 +1866,16 @@ void init_mario(void) {
         capObject->oForwardVelS32 = 0;
 
         capObject->oMoveAngleYaw = 0;
+    }
+
+    // load character model
+    switch (currentCharacter) {
+        case 0:
+            gMarioState->marioObj->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO];
+            break;
+        case 1:
+            gMarioState->marioObj->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_LUIGI];
+            break;
     }
 }
 

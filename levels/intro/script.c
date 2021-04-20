@@ -57,11 +57,11 @@ const LevelScript level_intro_mario_head_regular[] = { // titlescreen & file sel
     LOAD_RAW( /*seg*/ 0x16, _common1_geoSegmentRomStart, _common1_geoSegmentRomEnd),
     ALLOC_LEVEL_POOL(),
     LOAD_MODEL_FROM_GEO(MODEL_INTRO_EXAMPLE_TITLE, examplelogo_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_STAR, star_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_INTRO_ARROW, arrow_geo),
 
     AREA(/*index*/ 1, intro_geo_mario_head_regular),
         OBJECT(/*model*/ MODEL_INTRO_EXAMPLE_TITLE, /*pos*/ 0, 1000, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvWarp),
-        OBJECT(/*model*/ MODEL_STAR, /*pos*/ -500, 5000, 5000, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvTitleSelector),
+        OBJECT(/*model*/ MODEL_INTRO_ARROW, /*pos*/ -650, 5000, 5000, /*angle*/ 0, 270, 0, /*behParam*/ 0x00000000, /*beh*/ bhvTitleSelector),
         TERRAIN(/*terrainData*/ main_menu_seg7_collision),
     END_AREA(),
 

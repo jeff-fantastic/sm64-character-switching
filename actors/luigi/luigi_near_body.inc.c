@@ -2,12 +2,12 @@
 /*	Luigi near body																*/ 																
 /********************************************************************************/
 
-Lights1 light_luigi_near_body[] = {
+const Lights1 light_luigi_near_body[] = {
 	ShapeColor_luigi(  0,  0,255),
 	ShapeColor_luigi(  0,255,  0),
 };
 
-BetaVtx vtx_luigi_near_body[] = {
+const Vtx vtx_luigi_near_body[] = {
 	{     -2,     84,     33,    0,  204, 1792,    17,  119,   39,0}, 
 	{     -8,     73,     50,    0, 1116, 2052,     4,  101,   75,0}, 
 	{     36,     72,     28,    0,  352,   32,    50,  107,   43,0}, 
@@ -364,7 +364,7 @@ BetaVtx vtx_luigi_near_body[] = {
 	{     21,     59,    -59,    0,    0,    0,    32,   80,  -92,0}, 
 };
 
-Gfx gfx_luigi_near_body_0[] = {
+const Gfx gfx_luigi_near_body_0[] = {
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, m_button_txt),
 
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 0, 0, G_TX_LOADTILE, 0, G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD , G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD),
@@ -392,7 +392,7 @@ Gfx gfx_luigi_near_body_0[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx gfx_luigi_near_body_1[] = {
+const Gfx gfx_luigi_near_body_1[] = {
 
 	gsSPLight((&light_luigi_near_body[1].l[0]),1 ),
 	gsSPLight((&light_luigi_near_body[1].a   ),2 ),
@@ -534,7 +534,7 @@ Gfx gfx_luigi_near_body_1[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_near_body[] = {
+const Gfx RCP_luigi_near_body[] = {
 	gsDPPipeSync(),
 
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),

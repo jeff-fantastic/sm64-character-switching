@@ -2,12 +2,12 @@
 /*	Luigi middle body																*/ 																
 /********************************************************************************/
 
-Lights1 light_luigi_mid_body[] = {
+const Lights1 light_luigi_mid_body[] = {
 	ShapeColor_luigi(  0,  0,255),
 	ShapeColor_luigi( 22,255,  0),
 };
 
-BetaVtx vtx_luigi_mid_body[] = {
+const Vtx vtx_luigi_mid_body[] = {
 	{     69,     21,    -50,    0, -308,-2768,    89,   44,  -78,0}, 
 	{     21,     52,    -58,    0, -172,  348,    40,   54, -107,0}, 
 	{     31,     73,    -27,    0, 1972,  328,    66,  103,  -31,0}, 
@@ -196,7 +196,7 @@ BetaVtx vtx_luigi_mid_body[] = {
 	{     27,    -63,     41,    0,    0,    0,    23, -107,   63,0}, 
 };
 
-Gfx gfx_luigi_mid_body_0[] = {
+const Gfx gfx_luigi_mid_body_0[] = {
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, m_button_txt),
 
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 0, 0, G_TX_LOADTILE, 0, G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD , G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD),
@@ -222,7 +222,7 @@ Gfx gfx_luigi_mid_body_0[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx gfx_luigi_mid_body_1[] = {
+const Gfx gfx_luigi_mid_body_1[] = {
 
 	gsSPLight((&light_luigi_mid_body[1].l[0]),1 ),
 	gsSPLight((&light_luigi_mid_body[1].a   ),2 ),
@@ -300,7 +300,7 @@ Gfx gfx_luigi_mid_body_1[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_mid_body[] = {
+const Gfx RCP_luigi_mid_body[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
 	gsSPNumLights(1),

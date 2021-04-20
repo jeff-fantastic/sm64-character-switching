@@ -7,6 +7,9 @@
 
 // Note: This bin does not use bin IDs, unlike the other segmented bins.
 #include "mario/model.inc.c"
+#include "luigi/model.inc.c"
+#include "luigi/anims/data.inc.c"
+#include "luigi/anims/table.inc.c"
 
 #include "bubble/model.inc.c"
 

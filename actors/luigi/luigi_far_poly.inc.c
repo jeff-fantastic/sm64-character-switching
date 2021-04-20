@@ -2,7 +2,7 @@
 /*	Far Luigi data																*/ 																
 /********************************************************************************/
 
-Lights1 light_luigi_far[]={
+const Lights1 light_luigi_far[]={
 	ShapeColor_luigi(255,255,255),
 	ShapeColor_luigi(178,  0,  0),
 	ShapeColor_luigi(  0,255,  0),
@@ -11,7 +11,7 @@ Lights1 light_luigi_far[]={
 	ShapeColor_luigi(204,180,123),
 	ShapeColor_luigi(137, 59, 20),
 };
-BetaVtx vtx_luigi_far[]={
+const Vtx vtx_luigi_far[]={
 	{-6,34,-25,0,0,0,-96,19,-80,0},
 	{-9,39,24,0,0,0,-77,67,74,0},
 	{91,80,-34,0,0,0,19,124,-18,0},
@@ -639,7 +639,7 @@ BetaVtx vtx_luigi_far[]={
 	{49,46,96,0,0,0,75,29,97,0},
 	{49,96,0,0,0,0,43,119,0,0},
 };
-Gfx RCP_luigi_far0[]={
+const Gfx RCP_luigi_far0[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[0].l[0]),1),
 	gsSPLight((&light_luigi_far[0].a),2),
@@ -657,7 +657,7 @@ Gfx RCP_luigi_far0[]={
 	gsSP1Triangle(12,13,14,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far1[]={
+const Gfx RCP_luigi_far1[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[1].l[0]),1),
 	gsSPLight((&light_luigi_far[1].a),2),
@@ -673,7 +673,7 @@ Gfx RCP_luigi_far1[]={
 	gsSP1Triangle(4,5,6,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far2[]={
+const Gfx RCP_luigi_far2[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[2].l[0]),1),
 	gsSPLight((&light_luigi_far[2].a),2),
@@ -689,7 +689,7 @@ Gfx RCP_luigi_far2[]={
 	gsSP1Triangle(4,5,6,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far3[]={
+const Gfx RCP_luigi_far3[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[0].l[0]),1),
 	gsSPLight((&light_luigi_far[0].a),2),
@@ -707,7 +707,7 @@ Gfx RCP_luigi_far3[]={
 	gsSP1Triangle(12,13,14,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far4[]={
+const Gfx RCP_luigi_far4[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[2].l[0]),1),
 	gsSPLight((&light_luigi_far[2].a),2),
@@ -723,7 +723,7 @@ Gfx RCP_luigi_far4[]={
 	gsSP1Triangle(4,5,6,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far5[]={
+const Gfx RCP_luigi_far5[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[2].l[0]),1),
 	gsSPLight((&light_luigi_far[2].a),2),
@@ -739,7 +739,7 @@ Gfx RCP_luigi_far5[]={
 	gsSP1Triangle(4,5,6,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far6[]={
+const Gfx RCP_luigi_far6[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[3].l[0]),1),
 	gsSPLight((&light_luigi_far[3].a),2),
@@ -760,7 +760,7 @@ Gfx RCP_luigi_far6[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far7[]={
+const Gfx RCP_luigi_far7[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[4].l[0]),1),
 	gsSPLight((&light_luigi_far[4].a),2),
@@ -781,7 +781,7 @@ Gfx RCP_luigi_far7[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far8[]={
+const Gfx RCP_luigi_far8[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[4].l[0]),1),
 	gsSPLight((&light_luigi_far[4].a),2),
@@ -802,7 +802,7 @@ Gfx RCP_luigi_far8[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far9[]={
+const Gfx RCP_luigi_far9[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[3].l[0]),1),
 	gsSPLight((&light_luigi_far[3].a),2),
@@ -823,7 +823,7 @@ Gfx RCP_luigi_far9[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far10[]={
+const Gfx RCP_luigi_far10[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[4].l[0]),1),
 	gsSPLight((&light_luigi_far[4].a),2),
@@ -844,7 +844,7 @@ Gfx RCP_luigi_far10[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far11[]={
+const Gfx RCP_luigi_far11[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[4].l[0]),1),
 	gsSPLight((&light_luigi_far[4].a),2),
@@ -865,7 +865,7 @@ Gfx RCP_luigi_far11[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far12[]={
+const Gfx RCP_luigi_far12[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[5].l[0]),1),
 	gsSPLight((&light_luigi_far[5].a),2),
@@ -929,7 +929,7 @@ Gfx RCP_luigi_far12[]={
 	gsSP1Triangle(7,8,9,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far13[]={
+const Gfx RCP_luigi_far13[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[2].l[0]),1),
 	gsSPLight((&light_luigi_far[2].a),2),
@@ -972,7 +972,7 @@ Gfx RCP_luigi_far13[]={
 	gsSP1Triangle(6,7,8,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_far14[]={
+const Gfx RCP_luigi_far14[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_far[4].l[0]),1),
 	gsSPLight((&light_luigi_far[4].a),2),

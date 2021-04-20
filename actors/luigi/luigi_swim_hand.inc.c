@@ -2,11 +2,11 @@
 /*	Mario swiming hand															*/ 																
 /********************************************************************************/
 
-Lights1 mat_swim_hand[] = {
+const Lights1 mat_swim_hand[] = {
 	ShapeColor_luigi(255,255,255)
 };
 
-BetaVtx vtx_swim_hand_l[]={
+const Vtx vtx_swim_hand_l[]={
 	{121,73,-21,0,0,0,199-128,224-128,171-128,0},
 	{70,89,-20,0,0,0,107-128,253-128,117-128,0},
 	{77,41,21,0,0,0,157-128,170-128,244-128,0},
@@ -200,7 +200,7 @@ BetaVtx vtx_swim_hand_l[]={
 	{11,5,17,0,0,0,126-128,155-128,253-128,0},
 	{26,-32,6,0,0,0,180-128,36-128,200-128,0},
 };
-BetaVtx vtx_swim_hand_r[]={
+const Vtx vtx_swim_hand_r[]={
 	{81,37,-28,0,0,0,152-128,160-128,6-128,0},
 	{76,88,9,0,0,0,110-128,254-128,128-128,0},
 	{125,71,9,0,0,0,200-128,218-128,74-128,0},
@@ -397,7 +397,7 @@ BetaVtx vtx_swim_hand_r[]={
 
 
 
-Gfx RCP_swim_hand_l[]={
+const Gfx RCP_swim_hand_l[]={
 	gsSPNumLights(1),
 	gsSPLight((&mat_swim_hand[0].l[0]),1 ),
 	gsSPLight((&mat_swim_hand[0].a   ),2 ),
@@ -484,7 +484,7 @@ Gfx RCP_swim_hand_l[]={
 
 
 
-Gfx RCP_swim_hand_r[]={
+const Gfx RCP_swim_hand_r[]={
 	gsSPNumLights(1),
 	gsSPLight((&mat_swim_hand[0].l[0]),1 ),
 	gsSPLight((&mat_swim_hand[0].a   ),2 ),

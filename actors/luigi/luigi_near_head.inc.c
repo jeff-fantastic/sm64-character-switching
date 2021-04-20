@@ -2,14 +2,14 @@
 /*	Luigi near body																*/ 																
 /********************************************************************************/
 
-Lights1 light_luigi_head[] = {
+const Lights1 light_luigi_head[] = {
 	ShapeColor_luigi( 22,254,  2),
 	ShapeColor_luigi(254,193,121),
 	ShapeColor_luigi(108,  6,  0),
 };
-long long sos2 = 0;
+const long long sos2 = 0;
 
-BetaVtx vtx_luigi_head[] = {
+const Vtx vtx_luigi_head[] = {
 	{    186,     83,     26,    0, 1496, 1724,    77,   86,   51,0}, 
 	{    147,     30,     77,    0, 2524, 2420,    -3,   65,  108,0}, 
 	{    247,     60,     57,    0, 2064,  296,    49,   77,   87,0}, 
@@ -498,7 +498,7 @@ BetaVtx vtx_luigi_head[] = {
 	{     65,    -98,     43,    0,    0,    0,   -41, -100,   65,0}, 
 };
 
-Gfx gfx_luigi_head_0[] = {
+const Gfx gfx_luigi_head_0[] = {
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, l_mark_txt),
 
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 0, 0, G_TX_LOADTILE, 0, G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD , G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD),
@@ -520,7 +520,7 @@ Gfx gfx_luigi_head_0[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx gfx_luigi_head_1[] = {
+const Gfx gfx_luigi_head_1[] = {
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, l_momi_txt),
 
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 0, 0, G_TX_LOADTILE, 0, G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD , G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD),
@@ -544,7 +544,7 @@ Gfx gfx_luigi_head_1[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx gfx_luigi_head_2[] = {
+const Gfx gfx_luigi_head_2[] = {
 //	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, meye1_txt),
 
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 0, 0, G_TX_LOADTILE, 0, G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD , G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD),
@@ -570,7 +570,7 @@ Gfx gfx_luigi_head_2[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx gfx_luigi_head_3[] = {
+const Gfx gfx_luigi_head_3[] = {
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, l_hige_txt),
 
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 0, 0, G_TX_LOADTILE, 0, G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD , G_TX_CLAMP|G_TX_NOMIRROR , 5 , G_TX_NOLOD),
@@ -603,9 +603,7 @@ Gfx gfx_luigi_head_3[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx gfx_luigi_head_4[] = {
-	//gsSPDisplayList(RCP_luigi_near12),
-	//gsSPEndDisplayList(),
+const Gfx gfx_luigi_head_4[] = {
 
 	gsSPLight((&light_luigi_head[0].l[0]),1 ),
 	gsSPLight((&light_luigi_head[0].a   ),2 ),
@@ -770,7 +768,7 @@ Gfx gfx_luigi_head_4[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_head1[] = {
+const Gfx RCP_luigi_head1[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
 	gsSPNumLights(1),
@@ -792,7 +790,7 @@ Gfx RCP_luigi_head1[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_head2[] = {
+const Gfx RCP_luigi_head2[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
 	gsSPNumLights(1),
@@ -814,7 +812,7 @@ Gfx RCP_luigi_head2[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_head3[] = {
+const Gfx RCP_luigi_head3[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
 	gsSPNumLights(1),
@@ -836,7 +834,7 @@ Gfx RCP_luigi_head3[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_head4[] = {
+const Gfx RCP_luigi_head4[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
 	gsSPNumLights(1),
@@ -858,7 +856,7 @@ Gfx RCP_luigi_head4[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_head5[] = {
+const Gfx RCP_luigi_head5[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
 	gsSPNumLights(1),
@@ -880,7 +878,7 @@ Gfx RCP_luigi_head5[] = {
 	gsSPEndDisplayList() 
 };
 
-Gfx RCP_luigi_head6[] = {
+const Gfx RCP_luigi_head6[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
 	gsSPNumLights(1),
@@ -889,6 +887,50 @@ Gfx RCP_luigi_head6[] = {
 		gsSPDisplayList(gfx_luigi_head_0),
 		gsSPDisplayList(gfx_luigi_head_1),
 		gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, meye6_txt),
+		gsSPDisplayList(gfx_luigi_head_2),
+		gsSPDisplayList(gfx_luigi_head_3),
+
+	gsSPTexture(0x8000, 0x8000, 1, 1, 0),
+
+	gsDPPipeSync(),
+	gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),
+
+		gsSPDisplayList(gfx_luigi_head_4),
+
+	gsSPEndDisplayList() 
+};
+
+const Gfx RCP_luigi_head7[] = {
+	gsDPPipeSync(),
+	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
+	gsSPNumLights(1),
+	gsSPTexture(0x8000,0x8000, 0, G_TX_RENDERTILE, G_ON),
+
+		gsSPDisplayList(gfx_luigi_head_0),
+		gsSPDisplayList(gfx_luigi_head_1),
+		gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, meye7_txt),
+		gsSPDisplayList(gfx_luigi_head_2),
+		gsSPDisplayList(gfx_luigi_head_3),
+
+	gsSPTexture(0x8000, 0x8000, 1, 1, 0),
+
+	gsDPPipeSync(),
+	gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),
+
+		gsSPDisplayList(gfx_luigi_head_4),
+
+	gsSPEndDisplayList() 
+};
+
+const Gfx RCP_luigi_head8[] = {
+	gsDPPipeSync(),
+	gsDPSetCombineMode(G_CC_BLENDRGBA, G_CC_BLENDRGBA),
+	gsSPNumLights(1),
+	gsSPTexture(0x8000,0x8000, 0, G_TX_RENDERTILE, G_ON),
+
+		gsSPDisplayList(gfx_luigi_head_0),
+		gsSPDisplayList(gfx_luigi_head_1),
+		gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, meye8_txt),
 		gsSPDisplayList(gfx_luigi_head_2),
 		gsSPDisplayList(gfx_luigi_head_3),
 

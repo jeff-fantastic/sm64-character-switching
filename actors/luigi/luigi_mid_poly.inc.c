@@ -2,7 +2,7 @@
 /*	Luigi near data																*/ 																
 /********************************************************************************/
 
-Lights1 light_luigi_mid[]={
+const Lights1 light_luigi_mid[]={
 	ShapeColor_luigi(255,255,255),
 	ShapeColor_luigi(  0,255,  0),
 	ShapeColor_luigi(255,  0,  0),
@@ -17,7 +17,7 @@ Lights1 light_luigi_mid[]={
 	ShapeColor_luigi(255,255,  0),
 };
 
-BetaVtx vtx_luigi_mid[]={
+const Vtx vtx_luigi_mid[]={
 	{28,20,49,0,0,0,-53,0,115,0},
 	{10,9,32,0,0,0,-27,11,123,0},
 	{29,-33,5,0,0,0,6,-122,33,0},
@@ -1399,7 +1399,7 @@ BetaVtx vtx_luigi_mid[]={
 	{46,1,0,0,0,0,127,2,0,0},
 	{-5,81,-36,0,0,0,31,114,-44,0},
 };
-Gfx RCP_luigi_mid0[]={
+const Gfx RCP_luigi_mid0[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[0].l[0]),1),
 	gsSPLight((&light_luigi_mid[0].a),2),
@@ -1446,7 +1446,7 @@ Gfx RCP_luigi_mid0[]={
 	gsSP1Triangle(9,10,11,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid1[]={
+const Gfx RCP_luigi_mid1[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[1].l[0]),1),
 	gsSPLight((&light_luigi_mid[1].a),2),
@@ -1467,7 +1467,7 @@ Gfx RCP_luigi_mid1[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid2[]={
+const Gfx RCP_luigi_mid2[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[3].l[0]),1),
 	gsSPLight((&light_luigi_mid[3].a),2),
@@ -1488,7 +1488,7 @@ Gfx RCP_luigi_mid2[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid3[]={
+const Gfx RCP_luigi_mid3[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[0].l[0]),1),
 	gsSPLight((&light_luigi_mid[0].a),2),
@@ -1535,7 +1535,7 @@ Gfx RCP_luigi_mid3[]={
 	gsSP1Triangle(9,10,11,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid4[]={
+const Gfx RCP_luigi_mid4[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[3].l[0]),1),
 	gsSPLight((&light_luigi_mid[3].a),2),
@@ -1556,7 +1556,7 @@ Gfx RCP_luigi_mid4[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid5[]={
+const Gfx RCP_luigi_mid5[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[3].l[0]),1),
 	gsSPLight((&light_luigi_mid[3].a),2),
@@ -1577,7 +1577,7 @@ Gfx RCP_luigi_mid5[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid6[]={
+const Gfx RCP_luigi_mid6[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[4].l[0]),1),
 	gsSPLight((&light_luigi_mid[4].a),2),
@@ -1610,7 +1610,7 @@ Gfx RCP_luigi_mid6[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid7[]={
+const Gfx RCP_luigi_mid7[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[5].l[0]),1),
 	gsSPLight((&light_luigi_mid[5].a),2),
@@ -1636,7 +1636,7 @@ Gfx RCP_luigi_mid7[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid8[]={
+const Gfx RCP_luigi_mid8[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[5].l[0]),1),
 	gsSPLight((&light_luigi_mid[5].a),2),
@@ -1662,7 +1662,7 @@ Gfx RCP_luigi_mid8[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid9[]={
+const Gfx RCP_luigi_mid9[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[4].l[0]),1),
 	gsSPLight((&light_luigi_mid[4].a),2),
@@ -1695,7 +1695,7 @@ Gfx RCP_luigi_mid9[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid10[]={
+const Gfx RCP_luigi_mid10[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[5].l[0]),1),
 	gsSPLight((&light_luigi_mid[5].a),2),
@@ -1721,7 +1721,7 @@ Gfx RCP_luigi_mid10[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid11[]={
+const Gfx RCP_luigi_mid11[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[5].l[0]),1),
 	gsSPLight((&light_luigi_mid[5].a),2),
@@ -1747,7 +1747,7 @@ Gfx RCP_luigi_mid11[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid12[]={
+const Gfx RCP_luigi_mid12[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[9].l[0]),1),
 	gsSPLight((&light_luigi_mid[9].a),2),
@@ -1928,7 +1928,7 @@ Gfx RCP_luigi_mid12[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid13[]={
+const Gfx RCP_luigi_mid13[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[5].l[0]),1),
 	gsSPLight((&light_luigi_mid[5].a),2),
@@ -2016,7 +2016,7 @@ Gfx RCP_luigi_mid13[]={
 	gsSP1Triangle(3,4,5,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_mid14[]={
+const Gfx RCP_luigi_mid14[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_mid[5].l[0]),1),
 	gsSPLight((&light_luigi_mid[5].a),2),

@@ -25,8 +25,7 @@
 #include "white_particle/geo.inc.c"
 #include "wooden_signpost/geo.inc.c"
 #include "tree/geo.inc.c"
-#include "luigi/geo.inc.c"
-
 #include "examplelogo/geo.inc.c"
 #include "title_player_platform/geo.inc.c"
 #include "title_mario/geo.inc.c"
+#include "arrow/geo.inc.c"

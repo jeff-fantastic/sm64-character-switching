@@ -333,8 +333,9 @@
 // intro
 #define MODEL_INTRO_EXAMPLE_TITLE                 0x35        // examplelogo_geo
 #define MODEL_INTRO_CHARACTER_PEDESTAL            0x36        // title_player_platform_geo
-#define MODEL_INTRO_CHARACTER_MARIO               0x37        // mario_geo
-#define MODEL_INTRO_CHARACTER_LUIGI               0x38        // luigi_geo
+#define MODEL_INTRO_ARROW                         0x37
+#define MODEL_INTRO_CHARACTER_MARIO               0x38        // mario_geo
+#define MODEL_INTRO_CHARACTER_LUIGI               0x39        // luigi_geo
 
 // actor model IDs
 

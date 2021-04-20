@@ -85,13 +85,10 @@ UNUSED static const u64 binid_21 = 21;
 #include "tree/model.inc.c"
 UNUSED static const u64 binid_22 = 22;
 
-#include "luigi/model.inc.c"
-#include "luigi/anims/data.inc.c"
-#include "luigi/anims/table.inc.c"
-
 #include "examplelogo/model.inc.c"
 
 #include "title_player_platform/model.inc.c"
 #include "title_player_platform/collision.inc.c"
 
 #include "title_mario/model.inc.c"
+#include "arrow/model.inc.c"

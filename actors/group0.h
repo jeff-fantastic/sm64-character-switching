@@ -1,7 +1,6 @@
 #ifndef GROUP0_H
 #define GROUP0_H
 
-#include <add_luigi.h>
 #include "types.h"
 
 // bubble
@@ -18,150 +17,11 @@ extern const Gfx burn_smoke_seg4_dl_04022048[];
 extern const Gfx burn_smoke_seg4_dl_04022070[];
 
 // mario
-extern Gfx RCP_luigi_near_body[];
-extern Gfx RCP_luigi_mid_body[];
+#include "mario/geo_header.h"
 
-extern Gfx gfx_luigi_near_body_0[];
-extern Gfx gfx_luigi_near_body_1[];
-
-extern Gfx RCP_swim_hand_l[];
-extern Gfx RCP_swim_hand_r[];
-
-extern Gfx RCP_luigi_mid0[];
-extern Gfx RCP_luigi_mid1[];
-extern Gfx RCP_luigi_mid2[];
-extern Gfx RCP_luigi_mid3[];
-extern Gfx RCP_luigi_mid4[];
-extern Gfx RCP_luigi_mid5[];
-extern Gfx RCP_luigi_mid6[];
-extern Gfx RCP_luigi_mid7[];
-extern Gfx RCP_luigi_mid8[];
-extern Gfx RCP_luigi_mid9[];
-extern Gfx RCP_luigi_mid10[];
-extern Gfx RCP_luigi_mid11[];
-extern Gfx RCP_luigi_mid12[];
-extern Gfx RCP_luigi_mid13[];
-extern Gfx RCP_luigi_mid14[];
-
-extern Gfx RCP_luigi_near0[];
-extern Gfx RCP_luigi_near1[];
-extern Gfx RCP_luigi_near2[];
-extern Gfx RCP_luigi_near3[];
-extern Gfx RCP_luigi_near4[];
-extern Gfx RCP_luigi_near5[];
-extern Gfx RCP_luigi_near6[];
-extern Gfx RCP_luigi_near7[];
-extern Gfx RCP_luigi_near8[];
-extern Gfx RCP_luigi_near9[];
-extern Gfx RCP_luigi_near10[];
-extern Gfx RCP_luigi_near11[];
-extern Gfx RCP_luigi_near12[];
-extern Gfx RCP_luigi_near13[];
-extern Gfx RCP_luigi_near14[];
-
-extern Gfx RCP_luigi_far0[];
-extern Gfx RCP_luigi_far1[];
-extern Gfx RCP_luigi_far2[];
-extern Gfx RCP_luigi_far3[];
-extern Gfx RCP_luigi_far4[];
-extern Gfx RCP_luigi_far5[];
-extern Gfx RCP_luigi_far6[];
-extern Gfx RCP_luigi_far7[];
-extern Gfx RCP_luigi_far8[];
-extern Gfx RCP_luigi_far9[];
-extern Gfx RCP_luigi_far10[];
-extern Gfx RCP_luigi_far11[];
-extern Gfx RCP_luigi_far12[];
-extern Gfx RCP_luigi_far13[];
-extern Gfx RCP_luigi_far14[];
-
-extern Gfx RCP_luigi_head1[];
-extern Gfx RCP_luigi_head2[];
-extern Gfx RCP_luigi_head3[];
-extern Gfx RCP_luigi_head4[];
-extern Gfx RCP_luigi_head5[];
-extern Gfx RCP_luigi_head6[];
-
-//extern GeoLayout RCP_TitleLuigi[];
-extern GeoLayout RCP_LuigiHierarchy[];
-
-//#else
-extern Gfx RCP_mario_near_body[];
-extern Gfx RCP_mario_mid_body[];
-
-extern Gfx gfx_luigi_near_body_0[];
-extern Gfx gfx_luigi_near_body_1[];
-
-//extern Gfx RCP_swim_hand_l[];
-//extern Gfx RCP_swim_hand_r[];
-
-extern Gfx RCP_mario_mid0[];
-extern Gfx RCP_mario_mid1[];
-extern Gfx RCP_mario_mid2[];
-extern Gfx RCP_mario_mid3[];
-extern Gfx RCP_mario_mid4[];
-extern Gfx RCP_mario_mid5[];
-extern Gfx RCP_mario_mid6[];
-extern Gfx RCP_mario_mid7[];
-extern Gfx RCP_mario_mid8[];
-extern Gfx RCP_mario_mid9[];
-extern Gfx RCP_mario_mid10[];
-extern Gfx RCP_mario_mid11[];
-extern Gfx RCP_mario_mid12[];
-extern Gfx RCP_mario_mid13[];
-extern Gfx RCP_mario_mid14[];
-
-extern Gfx RCP_mario_near0[];
-extern Gfx RCP_mario_near1[];
-extern Gfx RCP_mario_near2[];
-extern Gfx RCP_mario_near3[];
-extern Gfx RCP_mario_near4[];
-extern Gfx RCP_mario_near5[];
-extern Gfx RCP_mario_near6[];
-extern Gfx RCP_mario_near7[];
-extern Gfx RCP_mario_near8[];
-extern Gfx RCP_mario_near9[];
-extern Gfx RCP_mario_near10[];
-extern Gfx RCP_mario_near11[];
-extern Gfx RCP_mario_near12[];
-extern Gfx RCP_mario_near13[];
-extern Gfx RCP_mario_near14[];
-
-extern Gfx RCP_mario_far0[];
-extern Gfx RCP_mario_far1[];
-extern Gfx RCP_mario_far2[];
-extern Gfx RCP_mario_far3[];
-extern Gfx RCP_mario_far4[];
-extern Gfx RCP_mario_far5[];
-extern Gfx RCP_mario_far6[];
-extern Gfx RCP_mario_far7[];
-extern Gfx RCP_mario_far8[];
-extern Gfx RCP_mario_far9[];
-extern Gfx RCP_mario_far10[];
-extern Gfx RCP_mario_far11[];
-extern Gfx RCP_mario_far12[];
-extern Gfx RCP_mario_far13[];
-extern Gfx RCP_mario_far14[];
-
-extern Gfx RCP_mario_head1[];
-extern Gfx RCP_mario_head2[];
-extern Gfx RCP_mario_head3[];
-extern Gfx RCP_mario_head4[];
-extern Gfx RCP_mario_head5[];
-extern Gfx RCP_mario_head6[];
-extern Gfx RCP_mario_head7[];
-extern Gfx RCP_mario_head8[];
-
-extern Gfx RCP_mario_far_body[];
-
-extern Gfx RCP_mario_far_head1[];
-extern Gfx RCP_mario_far_head2[];
-extern Gfx RCP_mario_far_head3[];
-extern Gfx RCP_mario_far_head4[];
-extern Gfx RCP_mario_far_head5[];
-
-extern GeoLayout RCP_MarioHierarchy[];
-extern GeoLayout RCP_TitlePlayer[];
+// luigi
+#include "luigi/geo_header.h"
+#include "luigi/anim_header.h"
 
 // sparkle
 extern const GeoLayout sparkles_geo[];

@@ -13,6 +13,7 @@
 #include "game/rumble_init.h"
 #include "game/object_helpers.h"
 #include "game/spawn_object.h"
+#include "game/mario.h"
 #include "src/menu/file_select.h"
 #include "src/game/object_list_processor.h"
 #include "level_table.h"
@@ -171,6 +172,7 @@ void bhv_selector_loop(void) {
     }
     g_selectorYPos = g_selectorYPos + (g_selectorYTarget - g_selectorYPos) * 0.2f;
     gCurrentObject->oPosY = g_selectorYPos;
+    gCurrentObject->oPosX = -625.0 + 50.0*sinf(gGlobalTimer/8.0);
 }
 
 void bhv_character_viewer_loop(void) {
@@ -279,10 +281,25 @@ s32 intro_character_select(void) {
     u8 characterg_selection = 0;
 
     handle_inputs(1);
-    print_text_fmt_int(20, 20, "%0d", g_selection);
 
     g_selectionMax = 1;
-    print_text_centered(SCREEN_WIDTH/2, 200, "SELECT A PLUMBER!");
+    print_text_centered(SCREEN_WIDTH/2, 200, "SELECT A BROTHER");
+
+    switch (g_selection) {
+        case 0:
+            print_text_centered(SCREEN_WIDTH/2, 48, "SUPER MARIO");
+            break;
+        case 1:
+            print_text_centered(SCREEN_WIDTH/2, 48, "SUPER LUIGI");
+            break;
+    }
+    print_text_centered(SCREEN_WIDTH/2, 30, "PRESS START TO BEGIN");
+
+    if (gPlayer1Controller->buttonPressed & (START_BUTTON | A_BUTTON)) {
+        characterg_selection = 1;
+        currentCharacter = g_selection;
+        play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+    }
 
     return characterg_selection;
 }

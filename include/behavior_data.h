@@ -544,5 +544,6 @@ extern const BehaviorScript bhvIntroScene[];
 extern const BehaviorScript bhvUnusedFakeStar[];
 extern const BehaviorScript bhvTitleSelector[];
 extern const BehaviorScript bhvTitleCharacterView[];
+extern const BehaviorScript bhvTitleCharacterPedestal[];
 
 #endif // BEHAVIOR_DATA_H

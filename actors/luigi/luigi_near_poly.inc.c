@@ -2,7 +2,7 @@
 /*	Luigi near data																*/ 																
 /********************************************************************************/
 
-Lights1 light_luigi_near[]={
+const Lights1 light_luigi_near[]={
 	ShapeColor_luigi(255,255,255),
 	ShapeColor_luigi(255,255,255),
 	ShapeColor_luigi(  0,255,  0),
@@ -14,7 +14,7 @@ Lights1 light_luigi_near[]={
 	ShapeColor_luigi(255,184,  0),
 };
 
-BetaVtx vtx_luigi_near[]={
+const Vtx vtx_luigi_near[]={
 	{32,17,51,0,0,0,-33,-11,121,0},
 	{13,9,35,0,0,0,-1,0,127,0},
 	{29,-33,13,0,0,0,61,-94,58,0},
@@ -2188,7 +2188,7 @@ BetaVtx vtx_luigi_near[]={
 	{23,-55,-29,0,0,0,96,-72,-40,0},
 	{23,-55,29,0,0,0,88,-84,33,0},
 };
-Gfx RCP_luigi_near0[]={
+const Gfx RCP_luigi_near0[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[1].l[0]),1),
 	gsSPLight((&light_luigi_near[1].a),2),
@@ -2250,7 +2250,7 @@ Gfx RCP_luigi_near0[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near1[]={
+const Gfx RCP_luigi_near1[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[2].l[0]),1),
 	gsSPLight((&light_luigi_near[2].a),2),
@@ -2290,7 +2290,7 @@ Gfx RCP_luigi_near1[]={
 	gsSP1Triangle(6,7,8,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near2[]={
+const Gfx RCP_luigi_near2[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[2].l[0]),1),
 	gsSPLight((&light_luigi_near[2].a),2),
@@ -2340,7 +2340,7 @@ Gfx RCP_luigi_near2[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near3[]={
+const Gfx RCP_luigi_near3[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[1].l[0]),1),
 	gsSPLight((&light_luigi_near[1].a),2),
@@ -2402,7 +2402,7 @@ Gfx RCP_luigi_near3[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near4[]={
+const Gfx RCP_luigi_near4[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[2].l[0]),1),
 	gsSPLight((&light_luigi_near[2].a),2),
@@ -2442,7 +2442,7 @@ Gfx RCP_luigi_near4[]={
 	gsSP1Triangle(6,7,8,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near5[]={
+const Gfx RCP_luigi_near5[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[2].l[0]),1),
 	gsSPLight((&light_luigi_near[2].a),2),
@@ -2492,7 +2492,7 @@ Gfx RCP_luigi_near5[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near6[]={
+const Gfx RCP_luigi_near6[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[3].l[0]),1),
 	gsSPLight((&light_luigi_near[3].a),2),
@@ -2530,7 +2530,7 @@ Gfx RCP_luigi_near6[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near7[]={
+const Gfx RCP_luigi_near7[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[4].l[0]),1),
 	gsSPLight((&light_luigi_near[4].a),2),
@@ -2560,7 +2560,7 @@ Gfx RCP_luigi_near7[]={
 	gsSP1Triangle(12,13,14,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near8[]={
+const Gfx RCP_luigi_near8[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[4].l[0]),1),
 	gsSPLight((&light_luigi_near[4].a),2),
@@ -2602,7 +2602,7 @@ Gfx RCP_luigi_near8[]={
 	gsSP1Triangle(12,13,14,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near9[]={
+const Gfx RCP_luigi_near9[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[3].l[0]),1),
 	gsSPLight((&light_luigi_near[3].a),2),
@@ -2640,7 +2640,7 @@ Gfx RCP_luigi_near9[]={
 	gsSP1Triangle(0,1,2,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near10[]={
+const Gfx RCP_luigi_near10[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[4].l[0]),1),
 	gsSPLight((&light_luigi_near[4].a),2),
@@ -2670,7 +2670,7 @@ Gfx RCP_luigi_near10[]={
 	gsSP1Triangle(12,13,14,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near11[]={
+const Gfx RCP_luigi_near11[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[4].l[0]),1),
 	gsSPLight((&light_luigi_near[4].a),2),
@@ -2712,7 +2712,7 @@ Gfx RCP_luigi_near11[]={
 	gsSP1Triangle(12,13,14,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near12[]={
+const Gfx RCP_luigi_near12[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[7].l[0]),1),
 	gsSPLight((&light_luigi_near[7].a),2),
@@ -2923,7 +2923,7 @@ Gfx RCP_luigi_near12[]={
 	gsSP1Triangle(6,7,8,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near13[]={
+const Gfx RCP_luigi_near13[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[4].l[0]),1),
 	gsSPLight((&light_luigi_near[4].a),2),
@@ -3077,7 +3077,7 @@ Gfx RCP_luigi_near13[]={
 	gsSP1Triangle(12,13,14,0),
 	gsSPEndDisplayList()
 };
-Gfx RCP_luigi_near14[]={
+const Gfx RCP_luigi_near14[]={
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[4].l[0]),1),
 	gsSPLight((&light_luigi_near[4].a),2),

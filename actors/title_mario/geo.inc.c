@@ -823,7 +823,6 @@ const GeoLayout title_mario_002_switch_opt0_001_switch_opt0_000_switch_opt0_000_
 const GeoLayout title_mario_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_SHADOW(1, 180, 100),
 		GEO_OPEN_NODE(),
 			GEO_SCALE(LAYER_FORCE, 16384),
 			GEO_OPEN_NODE(),
