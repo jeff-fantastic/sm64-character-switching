@@ -37,7 +37,17 @@ static u16 gDemoCountdown = 0;
 #ifndef VERSION_JP
 static s16 D_U_801A7C34 = 1;
 static s16 gameOverNotPlayed = 1;
-#endif
+#endif // New variables onwards
+float g_selectorYTarget = -370;
+float g_selectorYPos = 0;
+
+u8 g_selection;
+u8 g_selectionMax;
+u16 menuLayer;
+
+u16 g_joystickDelay;
+u16 g_joystickDisable;
+u8 g_saveNum;
 
 // run the demo timer on the PRESS START screen.
 // this function will return a non-0 timer once
@@ -142,51 +152,20 @@ s16 level_select_input_loop(void) {
     return 0;
 }
 
-float g_selectorYTarget = -370;
-float g_selectorYPos = 0;
-
-u8 g_selection;
-u8 g_selectionMax;
-u16 menuLayer;
-
-u16 g_joystickDelay;
-u16 g_joystickDisable;
-u8 g_saveNum;
-
-void handle_inputs(u8 type) {
+void handle_inputs(u8 type) { // handles menu scrolls, 0 = vertical 1 = horizontal
     handle_menu_scrolling (type == 0 ? MENU_SCROLL_VERTICAL : MENU_SCROLL_HORIZONTAL, &g_selection, 0, g_selectionMax);
 }
 
-void print_save_strings(void) {
+void print_save_strings(void) { // set of print functions that grab every set of file info
     print_save_file_star_count(0, 180, 90);
     print_save_file_star_count(1, 180, 72);
     print_save_file_star_count(2, 180, 54);
     print_save_file_star_count(3, 180, 36);
 }
 
-void bhv_selector_loop(void) {
-    if (menuLayer == 0) {
-        gCurrentObject->header.gfx.node.flags |= GRAPH_RENDER_INVISIBLE;
-    } else {
-        gCurrentObject->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
-    }
-    g_selectorYPos = g_selectorYPos + (g_selectorYTarget - g_selectorYPos) * 0.2f;
-    gCurrentObject->oPosY = g_selectorYPos;
-    gCurrentObject->oPosX = -625.0 + 50.0*sinf(gGlobalTimer/8.0);
-}
+s32 intro_default(void) { // titlescreen code
 
-void bhv_character_viewer_loop(void) {
-    if (g_selection == 0) {
-        gCurrentObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_INTRO_CHARACTER_MARIO];
-    } else {
-        gCurrentObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_INTRO_CHARACTER_LUIGI];
-    }
-}
-
-s32 intro_default(void) {
-    s32 sp1C = 0;
-
-    if (D_U_801A7C34 == 1) {
+    if (D_U_801A7C34 == 1) { // greet player
         if (gGlobalTimer < 0x81) {
             play_sound(SOUND_MARIO_HELLO, gGlobalSoundSource);
         } else {
@@ -195,9 +174,9 @@ s32 intro_default(void) {
         D_U_801A7C34 = 0;
     }
 
-    handle_inputs(0);
+    handle_inputs(0); // handle inputs on y axis
 
-    if (menuLayer != 0) {
+    if (menuLayer != 0) { // if entered titlescreen, handle arrow placements based on selection
         switch (g_selection) {
             case 0:
                 g_selectorYTarget = -370;
@@ -216,9 +195,9 @@ s32 intro_default(void) {
         }
     }
 
-    switch (menuLayer) {
+    switch (menuLayer) { // based on menuLayer, print appropriate text and set selection cap
         case 0:
-            g_selectionMax = 0;
+            g_selectionMax = 0; // easy fix to disable menu movement before entering title
             if ((gGlobalTimer & 0x1F) < 20) {
                 if (gControllerBits == 0) {
                     print_text_centered(SCREEN_WIDTH / 2, 75, "NO CONTROLLER");
@@ -247,13 +226,13 @@ s32 intro_default(void) {
             break;
     }
 
-    if (gPlayer1Controller->buttonPressed & (START_BUTTON | A_BUTTON)) {
+    if (gPlayer1Controller->buttonPressed & (START_BUTTON | A_BUTTON)) { // when you press start or the a button...
         switch (menuLayer) {
-            case 0:
+            case 0: // ...increase menu layer
                 play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
                 menuLayer++;
                 break;
-            case 1:
+            case 1: // ...load file
                 if (g_selection < 4) {
                     g_saveNum = g_selection + 1;
                     g_selection = 0;
@@ -263,7 +242,7 @@ s32 intro_default(void) {
                 }
                 play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
                 break;
-            case 2:
+            case 2: // ...delete file
                 if (g_selection < 4) {
                     save_file_erase(g_selection);
                     play_sound(SOUND_MARIO_DOH, gGlobalSoundSource);
@@ -277,15 +256,15 @@ s32 intro_default(void) {
     return g_saveNum;
 }
 
-s32 intro_character_select(void) {
+s32 intro_character_select(void) { // handles character select
     u8 characterg_selection = 0;
 
-    handle_inputs(1);
+    handle_inputs(1); // get horizontal input
 
-    g_selectionMax = 1;
+    g_selectionMax = 1; // set max selection (increase this if you're adding extra characters)
     print_text_centered(SCREEN_WIDTH/2, 200, "SELECT A BROTHER");
 
-    switch (g_selection) {
+    switch (g_selection) { // print name of the currently select character
         case 0:
             print_text_centered(SCREEN_WIDTH/2, 48, "SUPER MARIO");
             break;
@@ -297,7 +276,7 @@ s32 intro_character_select(void) {
 
     if (gPlayer1Controller->buttonPressed & (START_BUTTON | A_BUTTON)) {
         characterg_selection = 1;
-        currentCharacter = g_selection;
+        currentCharacter = g_selection; // set ingame character to player's selection
         play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
     }
 
@@ -341,21 +320,45 @@ s32 lvl_intro_update(s16 arg1, UNUSED s32 arg2) {
 
     switch (arg1) {
         case 0:
-            retVar = intro_play_its_a_me_mario();
+            retVar = intro_play_its_a_me_mario(); // splash screen
             break;
         case 1:
-            retVar = intro_default();
+            retVar = intro_default(); // custom titlescreen
             break;
         case 2:
-            retVar = intro_game_over();
+            retVar = intro_game_over(); // (unused) gameover
             break;
         case 3:
-            retVar = level_select_input_loop();
+            retVar = level_select_input_loop(); // debug menu
             break;
         case 4:
-            retVar = intro_character_select();
+            retVar = intro_character_select(); // custom character select
             break;
     }
     area_update_objects();
     return retVar;
+}
+
+// Custom object code relating to the titlescreen onwards
+
+void bhv_selector_loop(void) { // code for the arrow pointer on titlescreen
+    if (menuLayer == 0) { // make invisible if you havent entered the menu
+        gCurrentObject->header.gfx.node.flags |= GRAPH_RENDER_INVISIBLE;
+    } else {
+        gCurrentObject->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
+    }
+    g_selectorYPos = g_selectorYPos + (g_selectorYTarget - g_selectorYPos) * 0.2f; // interpolation formula
+    gCurrentObject->oPosY = g_selectorYPos; // go to interpolated position
+    gCurrentObject->oPosX = -625.0 + 50.0*sinf(gGlobalTimer/8.0); // neat little bouncy effect LOL
+}
+
+void bhv_character_viewer_loop(void) {
+    switch (g_selection) { // switches model based on selection
+        case 0:
+            gCurrentObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_INTRO_CHARACTER_MARIO];
+            break;
+        case 1:
+            gCurrentObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_INTRO_CHARACTER_LUIGI];
+            break;
+    }
 }
